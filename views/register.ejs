@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+
+    <ul>
+        <% if(typeof errors != 'undefined') { %> <% errors.forEach(error=>{ %>
+            <li><%= error.message %></li>
+        <% }) %> <% } %>
+    </ul>
+
+    <form action="/users/register" method="POST">
+        Nome Completo:
+        <div>
+            <input type="text" id="name" name="name" placeholder="Nome" required>
+        </div>
+        <br/>
+
+        E-mail:
+        <div>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+        </div>
+        <br/>
+
+        Senha:
+        <div>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <br/>
+
+        Confirme Senha:
+        <div>
+            <input type="password" id="password2" name="password2" placeholder="Confirme Password" required>
+        </div>
+        <br/>
+
+        Cluster:<br/>
+
+
+        <div>
+                <select name="cluster">
+                        <option value="ARACAJU">ARACAJU</option>
+                        <option value="MACEIO">MACEIO</option>
+                        <option value="FORTALEZA">FORTALEZA</option>
+                        <option value="RECIFE">RECIFE</option>
+                        <option value="SALVADOR">SALVADOR</option>
+                        <option value="PETROLINA">PETROLINA</option>
+                        <option value="TERESINA">TERESINA</option>
+                        <option value="ITABUNA">ITABUNA</option>
+                        <option value="VITORIA DA CONQUISTA">VITORIA DA CONQUISTA</option>
+                </select>
+        </div>
+            <br/>
+
+            Area de Atuação:
+            
+            <div>
+                    <select name="area">
+                            <option value="GERENCIA">GERENCIA</option>
+                            <option value="COORDENAÇAO">COORDENAÇAO</option>
+                            <option value="SUPERVISAO">SUPERVISAO</option>
+                            <option value="ANALISTA DE QUALIDADE">ANALISTA DE QUALIDADE</option>
+                            <option value="ASSISTENTE">ASSISTENTE</option>
+                    </select>
+            </div>
+            <br/>
+
+            <div>
+                <input type="submit" value="Cadastrar" />
+            </div>
+            <br/>
+            <a href="/users/login">Faça seu Login</a>
+    </div>
+    </form>
+</body>
+</html>
